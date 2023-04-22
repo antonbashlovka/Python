@@ -4,3 +4,19 @@
 #Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их произведение P. 
 #Помогите Кате отгадать задуманные Петей числа.
 
+import random
+
+x = random.randint(0,10)
+y = random.randint(0,10)
+
+s = x+y
+p = x*y
+
+print("Загадано: X = " + str(x) + ", Y = " + str(y)) 
+
+# дальше будет брутфорс
+
+for i in range(0, s+1):
+    for j in range(0, s+1):
+        if (i*j == p and i+j == s):
+            print("Решено: X = " + str(i) + ", Y = " + str(j)) 
