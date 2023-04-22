@@ -6,8 +6,8 @@
 
 import random
 
-x = random.randint(0,10)
-y = random.randint(0,10)
+x = random.randint(0,1000)
+y = random.randint(0,1000)
 
 s = x+y
 p = x*y
