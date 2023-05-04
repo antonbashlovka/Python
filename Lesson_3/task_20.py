@@ -24,3 +24,35 @@
 
 #ноутбук
 #    12
+#-----------------------------------
+
+#создаем массивы букв с очками, нулевым элементом задаем число очков
+
+scores = []
+
+scores.append([1, "A", "E", "I", "O", "U", "L", "N", "S", "T", "R", "А", "В", "Е", "И", "Н", "О", "Р", "С", "Т"]) #1
+scores.append([2, "D", "G", "Д", "К", "Л", "М", "П", "У"]) #2
+scores.append([3, "B", "C", "M", "P", "Б", "Г", "Ё", "Ь", "Я"]) #3
+scores.append([4, "F", "H", "V", "W", "Y", "Й", "Ы"]) #4
+scores.append([5, "K", "Ж", "З", "Х", "Ц", "Ч"]) #5
+scores.append([8, "J", "X", "Ш", "Э", "Ю"]) #8
+scores.append([10, "Q", "Z", "Ф", "Щ", "Ъ"]) #10
+
+#пользователь вводит слово
+word = str(input("Введите слово "))
+word = word.upper()
+print(word)
+
+score = 0
+
+#проходим по массиву очков и в случае совпадения прибавляем очки к сумме score
+for letter in word:
+    print(letter)
+    for arr in scores:
+        for target_letter in arr:
+            if letter == target_letter:
+                #print (letter + " " + target_letter + " " + str(arr[0]) )
+                score = score + arr[0]
+
+
+print(score)
