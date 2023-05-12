@@ -7,3 +7,40 @@
 #Напишите программу для нахождения максимального числа ягод, которое может собрать за один заход собирающий модуль, 
 #находясь перед некоторым кустом заданной во входном файле грядки.
 
+import modul_sbora_to_task24
+import random
+
+def quick_sort(array):
+    if len(array) <= 1:
+        return array
+    else:
+        pivot = array[0]
+
+    less = [i for i in array[1:] if i <= pivot]
+    greater = [i for i in array[1:] if i > pivot]
+
+    return quick_sort(less) + [pivot] + quick_sort(greater)
+
+n = 10 # количество кустов
+bed = []  # грядка (массив)
+
+for i in range(0, n):
+    bed.append(random.randint(1,20)) # наполнение грядки кустами, а кустов ягодами
+
+print(bed)
+
+# задаем индекс начального куста
+start = 2 
+
+# cоздаем  массив сумм, чтобы потом найти большую
+sums = []
+
+# нужно сделать обход кустов
+for i in range(start, n-1):
+    sums.append(modul_sbora_to_task24.sbor(bed[i-1],bed[i],bed[i+1]))
+
+print(sums)
+
+sums = quick_sort(sums)
+
+print(sums[-1])
