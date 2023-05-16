@@ -4,15 +4,15 @@
 #A = 2; B = 3 -> 8 
 
 a = int(input("Введите число "))
-b = int(input("Введите степень"))
+b = int(input("Введите степень "))
 
-def pow(a, b):
-    a = a * a
+def pow(a, b, d=a):
+    a = a * d
     b -= 1
-    # pow(a, b)
-
-    if (b == 0):
+    print(str(a) + " " + str(b))
+    if b == 1:
         return a
     
+    pow(a, b, d)
 
 print(pow(a, b))
