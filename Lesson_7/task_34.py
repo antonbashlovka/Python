@@ -11,3 +11,22 @@
 #**Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #    **Вывод:** Парам пам-пам 
 
+def countVowels(string):
+    i = 0
+    for letter in string:
+        if letter == "а" or letter == "у" or letter == "о" or letter == "ы" or letter == "и" or letter == "э" or letter == "я" or letter == "ю"  or letter == "ё" or letter == "е":
+            i += 1
+    return i
+
+verse = str(input("Введите стих "))
+
+# переводим стишок в список
+
+verse = verse.split(" ")
+
+res = list(filter(lambda phrase: countVowels(verse[0]) == countVowels(phrase), verse))
+
+if len(verse) == len(res) :
+    print("Парам пам-пам")
+else:
+    print("Пам парам")
