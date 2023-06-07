@@ -10,7 +10,8 @@
 import modul_sbora_to_task24
 import random
 
-def quick_sort(array):
+# быстрая сортировка
+def quick_sort(array): 
     if len(array) <= 1:
         return array
     else:
