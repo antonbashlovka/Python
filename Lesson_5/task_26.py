@@ -9,10 +9,11 @@ b = int(input("Введите степень "))
 def pow(a, b, d=a):
     a = a * d
     b -= 1
-    print(str(a) + " " + str(b))
+    
     if b == 1:
+        print(a)
         return a
     
     pow(a, b, d)
 
-print(pow(a, b))
+pow(a, b)
